@@ -1,6 +1,7 @@
 body {
     background-color: #222;
     color: whitesmoke;
+    font-family: sans-serif;
 }
 
 .card {
@@ -50,4 +51,50 @@ body {
     width: 40px;
     mix-blend-mode: multiply;
     padding-top: 8px;
+}
+
+.weather-icon {
+    width: 40%;
+    height: auto;
+}
+
+.weather h1 {
+    font-size: 80px;
+    font-weight: 500;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.weather h2 {
+    font-size: 25px;
+    font-weight: 200;
+    margin-top: -10px;
+}
+
+.details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25px;
+    margin-top: 75px;
+}
+
+.col {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    font-weight: 400;
+}
+
+.col img {
+    width: 45px;
+    margin-right: 20px;
+}
+
+.humidity,
+.wind {
+    font-size: 28px;
+    margin-top: 15px;
+    margin-bottom: -2px;
 }
