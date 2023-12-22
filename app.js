@@ -7,9 +7,15 @@ const weatherIcon = document.querySelector(".weather-icon");
 
 async function checkWeather(city) {
     const response = await fetch(apiURL + `&q=${city}` + `&appid=${apiKey}`);
+
+    if (response.status == 404) {
+        document.querySelector(".error").style.display = "block";
+        document.querySelector(".weather").style.display = "none";
+    }
+
     var data = await response.json();
 
-    console.log(data);
+    // console.log(data);
 
     document.querySelector(".city").innerHTML = data.name;
     document.querySelector(".temp").innerHTML = `${data.main.temp}°C`;
@@ -33,7 +39,7 @@ async function checkWeather(city) {
     } else if (data.weather[0].main == "Snow") {
         weatherIcon.src = "images/snow.png";
     }
-
+    document.querySelector(".error").style.display = "none";
     document.querySelector(".weather").style.display = "block";
 }
 
